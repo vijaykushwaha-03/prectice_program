@@ -19,9 +19,11 @@ int main()
             min = arr[i];
         }
     }
+
     printf("\n");
     printf(" Min is => %d ", min);
     printf("\n");
+    
     for (i = 0; i < 5; i++)
     {
         if (arr[i] > max)
