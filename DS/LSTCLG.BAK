@@ -1,0 +1,201 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+struct node
+{
+	int data;
+	struct node *next;
+};
+struct node *tail=0,*temp,*newnode;
+void insert()
+{
+      //	int ch=1;
+
+		newnode = (struct node*)malloc(sizeof(struct node));
+		printf(" Enter =>");
+		scanf("%d",&newnode->data);
+		newnode->next = 0;
+
+		if(tail == 0)
+		{
+			tail = newnode;
+			newnode->next = tail;
+		}
+		else
+		{
+			newnode->next = tail->next;
+			tail->next = newnode;
+			tail = newnode;
+		}
+
+}
+
+void display()
+{
+	temp = tail->next;
+
+	while(temp->next != tail)
+	{
+		printf(" %d ",temp->data);
+		temp = temp->next;
+	}
+
+	printf(" %d ", tail->data);
+}
+
+void insert_first()
+{
+	newnode = (struct node*)malloc(sizeof(struct node));
+
+	printf(" Enter =>");
+	scanf("%d",&newnode->data);
+
+	newnode->next = tail->next;
+	tail->next = newnode;
+
+}
+void insert_last()
+{
+	newnode = (struct node*)malloc(sizeof(struct node));
+
+	printf(" Enter =>");
+	scanf("%d",&newnode->data);
+
+
+	newnode->next =tail->next;
+	tail ->next = newnode;
+	tail = newnode;
+
+
+}
+
+void insert_pos()
+{
+	int i=1,pos;
+
+	printf("\n\t Enter Position =>");
+	scanf("%d",&pos);
+
+	newnode = (struct node*) malloc(sizeof(struct node));
+
+	printf("\n\t Enter Data =>");
+	scanf("%d",&newnode->data);
+
+	temp = tail->next;
+
+	while(i<pos)
+	{
+		temp = temp->next;
+		i++;
+	}
+
+	newnode->next = temp->next;
+	temp->next = newnode;
+}
+
+void del_first()
+{
+	temp = tail->next;
+	tail->next = temp->next;
+	free(temp);
+}
+
+void del_last()
+{
+	  struct node *prenode;
+	temp = head;
+
+	while(temp->next != 0)
+	{
+		prenode = temp;
+		temp = temp->next;
+	}
+
+	prenode->next = 0;
+
+	free(temp);
+
+}
+  /*
+void del_pos()
+{
+	struct node *prenode;
+	int pos,i = 1;
+
+	printf("\n\t Enter Position =>");
+	scanf("%d",&pos);
+
+	temp = head;
+
+	while(i < pos)
+	{
+		prenode = temp;
+		temp = temp->next;
+		i++;
+	}
+//	 newnode = temp->next;
+//	 temp->next = newnode->next;
+	prenode->next = temp->next;
+     //	free(newnode);
+	 free(temp);
+}  */
+void main()
+{
+
+	int chh;
+	clrscr();
+	do
+	{
+		printf("\n 1 Insert \n 2 display \n 3 insert First \n 4 insert last \n 5 insert Pos \n 6 Delete first \n 7 Delete Last \n 8 Delete Pos \n 9 Exit \n");
+		printf("\n\t Enter Choice =>");
+		scanf("%d",&chh);
+
+		switch(chh)
+		{
+			case 1: //insert
+			       insert();
+			break;
+
+			case 2: //display
+				display();
+			break;
+
+			case 3: // insert first
+			insert_first();
+			break;
+
+			case 4: // insert last
+				insert_last();
+			break;
+
+			case 5:
+				insert_pos();
+			break;
+
+			case 6:
+				del_first();
+			break;
+
+			case 7:
+				del_last();
+			break;
+
+			case 8:
+		   //		del_pos();
+			break;
+
+			case 9://exit
+				exit(0);
+			break;
+
+		default:
+			printf(" Wrong Choice ");
+		}
+
+	}while(chh);
+
+		getch();
+
+
+}

@@ -1,0 +1,1 @@
+// Area of triangle (l*b)/2

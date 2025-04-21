@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<conio.h>
+
+int facto(int no)
+{
+	int i,fact=1;
+
+	for(i=1; i<=no; i++)
+	{
+		fact = fact*i;
+	}
+	return fact;
+
+}
+
+int krishna(int no)
+{
+	int sum = 0,rm,tmp;
+	tmp = no;
+
+	while(no>0)
+	{
+		rm = no%10;
+		sum = sum+facto(rm);
+		no = no/10;
+	}
+     return  ( sum == tmp);
+}
+
+void printk(int no)
+{
+	FILE *fp;
+	int i;
+	fp = fopen("krishshs.txt","a");
+	for(i=3; i<=no; i++)
+	{
+		if(krishna(i))
+		{
+			printf("%d\n",i);
+			fprintf(fp,"%d",i);
+		}
+	}
+	fclose(fp);
+}
+void main()
+{
+	int no;
+
+	clrscr();
+
+	printf("\n\t Enter Number =>");
+	scanf("%d",&no);
+
+       //printf(" %d",facto(no));
+	printk(no);
+    /*
+	if( krishna(no) == no)
+	{
+		printf("\n %d is krishna",no);
+	}
+	else
+	{
+		printf("\n %d is not krishna",no);
+	}*/
+	getch();
+}

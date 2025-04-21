@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+struct node * head;
+
+typedef struct node
+{
+	int data;
+	struct node * next;
+}node;
+
+node * create();
+
+node * create()
+{
+	node * head,*p;
+	int i,n;
+	head = NULL;
+	printf("Enter No of data");
+	scanf("%d",&n);
+	printf("Enter No of data");
+
+	for(i=0; i<n; i++)
+	{
+		if(head == NULL)
+		{
+		p = (node*) malloc(sizeof(node));
+		head = p;
+		}
+		else
+		{
+		 p->next = (node*) malloc(sizeof(node));
+		 }
+		 p->next=NULL;
+		 scanf("%d",&(p->data));
+	}
+	return(head);
+}

@@ -1,0 +1,28 @@
+// KM is convert into meter,inch,feet,cm
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+
+	float feet,KM, CM,M,inch;
+
+	clrscr();
+
+	printf("Enter Kilo Metar => ");
+	scanf("%f",&KM);
+
+	M = KM * 1000;
+	feet = KM * 3280.84;
+	inch = KM * 39370.1;
+	CM = KM * 10000;
+
+	printf("\n\n\t %.2f Kilo meter = %.2f Meter ",KM,M);
+	printf("\n\n\t %.2f Kilo meter = %.2f feet ",KM,feet);
+	printf("\n\n\t %.2f Kilo meter = %.2f inch ",KM,inch);
+	printf("\n\n\t %.2f Kilo meter = %.2f centimeter ",KM,CM);
+
+	getch();
+
+}

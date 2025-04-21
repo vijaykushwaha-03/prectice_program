@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+void main()
+{
+	int i,n,sum=0,x;
+
+	clrscr();
+
+	printf("\n\n\t Enter number =>");
+	scanf("%d",&n);
+
+	for(i=1; i<=n; i++)
+	{
+		sum = sum+pow(i,i);
+		x = pow(i,i);
+		printf(" %d + ",x);
+	}
+	printf(" ==> %d",sum);
+
+	getch();
+}

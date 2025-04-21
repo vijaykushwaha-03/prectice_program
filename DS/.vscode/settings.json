@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "ARRCURD.C": "cpp",
+        "INFTPOFI.C": "cpp",
+        "EXAM.C": "cpp",
+        "DUBLYLST.C": "cpp",
+        "DELLST.C": "cpp"
+    }
+}

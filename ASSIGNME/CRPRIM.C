@@ -1,0 +1,114 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<stdlib.h>
+
+typedef enum Bool {false,true}Bool;
+
+Bool isPrime(const int no)
+{
+	int i;
+
+	if(no == 0 || no == 1)
+		return false;
+
+	if(no == 2)
+		return true;
+
+	if(no%2 == 0)
+		return false;
+
+	for(i=3; i<no/2; i++)
+	{
+		if(no%i == 0)
+			return false;
+
+	}
+		return true;
+
+}
+
+
+int noofDigit(int no)
+{
+	int count = 0;
+
+	while(no>0)
+	{
+		no = no/10;
+		count++;
+	}
+	return count ;
+}
+
+Bool isCircular(int no)
+{
+
+	int no_of_digit,first_digit,i,div;
+
+	if(isPrime(no) == false)
+		return false;
+
+	no_of_digit = noofDigit(no);
+
+	for(i=1; i<no_of_digit; i++)
+	{
+		div = pow(10,no_of_digit - 1);
+		first_digit = no/div;
+		no = no%div;
+		no = no*10+first_digit;
+
+		if(isPrime(no) == false)
+		return false;
+	}
+
+	return true;
+}
+
+void goodprime(int count)
+{
+	int i,j=0,sq,multi;
+	int *prime;
+
+	prime = (int *)malloc(count * sizeof(int));
+
+	for(i=2; i<= count; i++)
+	{
+		if(isPrime(i) == true)
+		{
+			prime[j] = i;
+			j++;
+		}
+	}
+
+	for(i=1; i<=j; i++)
+	{
+		sq = prime[i] * prime[i];
+		multi = prime[i-1] * prime[i+1];
+
+		if(sq>multi)
+
+			printf(" %d ",prime[i]);
+
+	}
+	free(prime);
+}
+void main()
+{
+	int i;
+
+	clrscr();
+	printf("\n\t\t GOOD PRIME \n\n");
+	goodprime(1000);
+
+	printf("\n\n \t\t CirCUler \n\n");
+	for(i=2; i<1000; i++)
+	{
+		if(isCircular(i) == true)
+		{
+			printf(" %d ",i);
+		}
+	}
+
+	getch();
+}

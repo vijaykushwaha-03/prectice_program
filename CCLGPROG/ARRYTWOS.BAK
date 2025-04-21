@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<conio.h>
+
+#define SIZE 60
+
+void main()
+{
+	int i,n;
+	int sub1[SIZE],sub2[SIZE],total[SIZE];
+	clrscr();
+
+	printf("\n\n\t Enter how many values u want =>");
+	scanf("%d",&n);
+
+	// read
+
+	for(i=0; i<n; i++)
+	{
+		printf("\n\n\t Enter Marks of RollNo %d Test-1 ==> ",i+1);
+		scanf("%d",&sub1[i]);
+		printf("\n\n\t Enter Marks of RollNo %d Test-2 ==> ",i+1);
+		scanf("%d",&sub2[i]);
+
+		total[i] = sub1[i] + sub2[i];
+
+	}
+	clrscr();
+	printf("\n\n\t Roll No \tMarks-1\tMarks-2\tTotal");
+	printf("\n\t\t-------------------------------------");
+	for(i=0; i<n; i++)
+	{
+		printf("\n\n\t\t%d\t%d\t%d\t%d",i+1,sub1[i],sub2[i],total[i]);
+	}
+	getch();
+}

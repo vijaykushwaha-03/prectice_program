@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<conio.h>
+
+void mul();
+
+void mul(int a,int b)
+{
+	int tt;
+	clrscr();
+
+	printf("\n\t ... Multiplication is ...");
+
+	tt = a * b;
+
+	printf("\n\n\t multiplication is => %d",tt);
+	getch();
+}
+
+void add(int a,int b)
+{
+	int tt;
+	clrscr();
+
+	printf("\n\t ... Addition is ...");
+
+	tt = a + b;
+
+	printf("\n\n\t Addition is => %d",tt);
+	getch();
+}
+void main()
+{
+	int a,b;
+
+	clrscr();
+	printf("\n\n\t Enter Number A =>");
+	scanf("%d",&a);
+
+	printf("\n\n\t Enter Number B =>");
+	scanf("%d",&b);
+
+	mul(a,b);
+	add(a,b);
+	getch();
+}

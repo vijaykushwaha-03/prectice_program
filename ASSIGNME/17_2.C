@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int i,a[10],n,st,ed,sum=0;
+
+	clrscr();
+
+	printf("\n\n\t Enter size of array =>");
+	scanf("%d",&n);
+
+	for(i=0; i<n; i++)
+	{
+		printf("\n\n\t Enter Marks of Student %d Between [0-100] =>",i+1);
+		scanf("%d",&a[i]);
+	}
+
+	printf("\n\n\t Enter starting point =>");
+	scanf("%d",&st);
+
+	printf("\n\n\t Enter ending point =>");
+	scanf("%d",&ed);
+
+	for(i=st; i<=ed; i++)
+	{
+		printf("\n\n\t [%d] => %d",i,a[i]);
+		sum = sum+1;
+	}
+
+	printf("\n\n\t Sum is => %d",sum);
+	getch();
+}

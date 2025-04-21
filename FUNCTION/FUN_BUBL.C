@@ -1,0 +1,63 @@
+
+#include<stdio.h>
+#include<conio.h>
+
+void bubble();    // declare...
+
+void main()
+{
+	int a[50],n,i;
+
+	clrscr();
+
+	printf("\n\n\t Enter size of Array =>");
+	scanf("%d",&n);
+	 //read
+	for(i=0; i<n; i++)
+	{
+		printf("\n\n\t Enter value %d => ",i+1);
+		scanf("%d",&a[i]);
+	}
+
+	bubble(a,n);    // call fun..
+
+	getch();
+}
+
+void bubble(int a[],int n)  // define
+{
+	int i,j,tmp=0;
+
+	// write
+	printf("\n\n\t Before Shorting....\n");
+
+	for(i=0; i<n; i++)
+	{
+		printf(" %d ",a[i]);
+	
+	for(i=0; i<n; i++)
+	{
+		for(j=i+1; j<n; j++)
+		{
+			if(a[i] > a[j] )
+			{
+			   //	tmp = a[i];
+			     //	a[i] = a[j];
+			      //	a[j] = tmp;
+			      a[i] = a[i] + a[j];
+			      a[j] = a[i] - a[j];
+			      a[i] = a[i] - a[j];
+
+			}
+		}
+	}
+
+	printf("\n\n\t After Shorting....\n");
+
+	for(i=0; i<n; i++)
+	{
+		printf(" %d ",a[i]);
+	}
+
+	}
+}

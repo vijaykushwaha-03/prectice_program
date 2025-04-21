@@ -1,0 +1,221 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#define PI 3.14
+
+double AreaOfCir(const double radius)
+{
+	return PI*radius*radius;
+}
+
+double AreaOfTra(const double lenth,const double breath)
+{
+	return lenth*breath;
+}
+
+double VolumOfCyl(const double radius,const double height)
+{
+	return PI*radius*radius*height;
+}
+
+double VolumOfCone(const double radius,const double height)
+{
+	return (PI*radius*radius*height)/3;
+}
+
+double SI(const double prin,const double rate,const double time)
+{
+	return (prin*rate*time)/100;
+}
+
+double CI(const double prin,const double rate,const double time)
+{
+	float ci,a,b;
+	a = (1+(rate/100));
+	b = pow(a,time);
+	ci = prin*(b-1);
+	return ci;
+}
+
+void menu()
+{
+	printf("\n\tn1..Aera");
+	printf("\n\tn2..Volume");
+	printf("\n\tn3..Interest");
+	printf("\n\tn4..Exit");
+}
+
+void areamenu()
+{
+	printf("\n\tn1..Aera of circle");
+	printf("\n\tn2..Area of triangle");
+	printf("\n\tn3..Exit");
+	printf("\n\tn4.. Enter Your choice =>");
+
+}
+
+void volumemenu()
+{
+	printf("\n\tn1..Volume of cylinder");
+	printf("\n\tn2..Volume of cone");
+	printf("\n\tn3..Exit");
+	printf("\n\tn4.. Enter Your choice =>");
+
+}
+
+void intrestmenu()
+{
+	printf("\n\tn1..Simple Interest");
+	printf("\n\tn2..Compound Interest");
+	printf("\n\tn3..Exit");
+	printf("\n\tn4.. Enter Your choice =>");
+
+}
+
+void main()
+{
+	int ch,ach,vch,ich;
+	double radius,height,breath,length,rate,time,prin;
+
+	do
+	{
+		clrscr();
+		menu();
+		scanf("%if",&ch);
+
+		switch(ch)
+		{
+		 case 1:
+			do
+			{
+				clrscr();
+				areamenu();
+				scanf("%d",&ach);
+				switch(ach)
+				{
+				 case 1:
+					printf("\n\t Enter radius==>");
+					scanf("%lf",&radius);
+
+					printf("\n\t area of circle==>%g",AreaOfCir(radius));
+				 break;
+
+				 case 2:
+					printf("\n\t Enter Length==>");
+					scanf("%lf",&length);
+					printf("\n\t Enter Breath==>");
+					scanf("%lf",&breath);
+
+					printf("\n\t Area Of Triangle is => %g",AreaOfTra(length,breath));
+				 break;
+
+				 case 3:
+				 break;
+
+				 default:
+					printf("\n\twrong choice");
+				 }
+				 if(ach!=3)
+				 getch();
+				}
+				while(ach!=3);
+
+		 break;
+
+		 case 2:
+			do
+			{
+				clrscr();
+				volumemenu();
+				scanf("%d",&vch);
+				switch(vch)
+				{
+				 case 1:
+					printf("\n\t Enter radius==>");
+					scanf("%lf",&radius);
+
+					printf("\n\t Enter Height==>");
+					scanf("%lf",&height);
+
+					printf("\n\t Volume of cylander==> %g",VolumOfCyl(radius,height));
+				 break;
+
+				 case 2:
+					printf("\n\t Enter radius==>");
+					scanf("%lf",&radius);
+
+					printf("\n\t Enter Height==>");
+					scanf("%lf",&height);
+					printf("\n\t Volume of Cone==> %g",VolumOfCone(radius,height));
+				 break;
+
+				 case 3:
+				 break;
+
+				 default:
+					printf("\n\twrong choice");
+				 }
+				 if(vch!=3)
+				 getch();
+				}
+				while(vch!=3);
+		 break;
+
+		 case 3:
+			do
+			{
+				clrscr();
+				intrestmenu();
+				scanf("%d",&ich);
+				switch(ich)
+				{
+				 case 1:
+					printf("\n\t Enter Principle ==>");
+					scanf("%lf",&prin);
+
+					printf("\n\t Enter Rate Of Intrest==>");
+					scanf("%lf",&rate);
+
+					printf("\n\t Enter Number Of year==>");
+					scanf("%lf",&time);
+
+					printf("\n\t Simple Intrest is ==> %g",SI(prin,rate,time));
+				 break;
+
+				 case 2:
+
+					printf("\n\t Enter Principle ==>");
+					scanf("%lf",&prin);
+
+					printf("\n\t Enter Rate Of Intrest==>");
+					scanf("%lf",&rate);
+
+					printf("\n\t Enter Number Of year==>");
+					scanf("%lf",&time);
+
+					printf("\n\t Compaund Intrest is ==> %g",CI(prin,rate,time));
+				 break;
+
+				 case 3:
+				 break;
+
+				 default:
+					printf("\n\twrong choice");
+				 }
+				 if(vch!=3)
+				 getch();
+				}
+				while(vch!=3);
+		 break;
+
+		 case 4:
+		 break;
+
+		 default:
+			printf("\n\twrong choice");
+		}
+
+	} while(ch!=4);
+
+}
+

@@ -1,0 +1,26 @@
+// write a program to calculate compaund intrest
+
+#include<stdio.h>
+#include<conio.h>
+#include <math.h>
+void main()
+{
+	int P;
+	float N,R,comp_int;
+	clrscr();
+
+	printf("Enter Principle Amount =>");
+	scanf("%d",&P);
+
+	printf("Enter Rate of intresrt =>");
+	scanf("%f",&R);
+
+	printf("Enter Number of Year =>");
+	scanf("%f",&N);
+
+	comp_int = P*pow((1+R/100),N);
+	printf("Compound Intrest is => %f",comp_int);
+
+	getch();
+
+}

@@ -1,0 +1,19 @@
+// celsius to Fahreiheit (c*9/5)+32
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	float cel,fah;
+	clrscr();
+
+	printf("Enter Celsius =>");
+	scanf("%f",&cel);
+
+	fah = (cel*9/5)+32 ;
+
+	printf(" %.2f celsuis is fahrehiet => %.2f ",cel,fah);
+
+	getch();
+}

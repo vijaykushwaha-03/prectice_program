@@ -1,0 +1,106 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+struct node
+{
+	int data;
+	struct node *next,*prev;
+};
+struct node *head = 0,*tail,*temp,*newnode;
+
+void create()
+{
+   newnode = (struct node *)malloc (sizeof(struct node));
+   printf("\n\t Enter Data =>");
+   scanf("%d",&newnode->data);
+
+   newnode->next = 0;
+   newnode->prev = 0;
+
+   if(head == 0)
+   {
+	head = newnode;
+	tail = newnode;
+   }
+   else
+   {
+	tail->next = newnode;
+	newnode->prev = tail;
+	tail = newnode;
+   }
+}
+
+void display()
+{
+    temp = head;
+
+    while(temp !=0)
+    {
+	printf(" %d ",temp->data);
+	temp = temp->next;
+    }
+}
+
+void pos()
+{
+	int pos,i=1;
+
+	newnode = (struct node *)malloc(sizeof(struct node));
+	printf("Ener Pos =>");
+	scanf("%d",&pos);
+	printf("Enter Data =>"):
+	scanf("%d",&newnode->data);
+
+	temp = head;
+
+	while(i <pos)
+	{
+		temp = temp->next;
+		i++;
+	}
+
+	newnode->prev = temp;
+	newnode->next = temp->next;
+	temp->next = newnode;
+	newnode->next->prev = newnode;
+
+}
+void main()
+{
+	int ch;
+
+	clrscr();
+
+	do
+	{
+		printf("\n 1 Create \n 2 Display \n 3 insert first \n 4 insert last \n 5 postion  \n 6 delete first \n 7 del last \n 8 postion \n 9 exit \n\n");
+		printf("Enter Choice =>");
+		scanf("%d",&ch);
+
+		switch(ch)
+		{
+
+		case 1:
+			create();
+		break;
+
+		case 2:
+			display();
+		break;
+
+		case 5:
+			pos();
+		break;
+
+		case 3:
+			exit(0);
+		break;
+
+		default:
+			printf("Wrong choice !!!!");
+		}
+
+	}while(ch>0);
+	getch();
+}

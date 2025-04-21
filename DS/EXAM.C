@@ -1,0 +1,97 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct node
+{
+	int data;
+	struct node*next;
+};
+struct node *head=0,*newnode,*temp;
+
+void create()
+{
+
+	newnode = (struct node *) malloc(sizeof(struct node));
+	printf("\n\t ENter Dta =>");
+	scanf("%d",&newnode->data);
+	newnode->next = 0;
+
+	if(head == 0)
+	{
+	     head = newnode;
+	     temp = head;
+	}
+	else
+	{
+
+		temp->next = newnode ;
+		temp = newnode;
+	}
+}
+void display()
+{
+	temp = head;
+	while(temp!=0)
+	{
+		printf(" %d ",temp->data);
+		temp = temp->next;
+	}
+}
+void del()
+{
+	struct node *pre;
+	int pos, i =1;
+
+	printf("\n\t Enter Position =>");
+	scanf("%d",&pos);
+
+	temp = head;
+
+	while(temp<pos)
+	{
+		pre = temp;
+		temp = temp->next;
+		i++;
+	}
+
+	pre->next = temp->next;
+	free(temp);
+
+
+}
+void main()
+{
+	int ch;
+
+	clrscr();
+
+	do
+	{
+		printf("\n 1 creatr\n 2 Dis \n 3 del \n 4 exit\n");
+		printf("ENter Choice =>");
+		scanf("%d",&ch);
+
+		switch(ch)
+		{
+			case 1:
+				create();
+			break;
+
+			case 2:
+				display();
+			break;
+
+			case 3:
+				del();
+			break;
+
+			case 4:
+				exit(0);
+			break;
+
+		default:
+			printf("\ Wrognm cjopi ");
+		}
+	}while(ch>0);
+	getch();
+}

@@ -1,0 +1,204 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct node
+{
+	int data;
+	struct node *next;
+};
+
+struct node *newnode,*head = 0,*temp;
+
+void insert()
+{
+	newnode = (struct node *)malloc (sizeof(struct node));
+	printf("\n Enter Data =>");
+	scanf("%d",&newnode->data);
+	newnode->next = 0;
+
+	if(head == 0)
+	{
+		head = newnode;
+		temp = head;
+	}
+	else
+	{
+		temp->next = newnode;
+	       temp =  newnode;
+	}
+}
+
+void display()
+{
+	temp = head;
+
+	while(temp != 0)
+	{
+		printf(" %d ",temp->data);
+		temp = temp->next;
+	}
+}
+
+void insert_fir()
+{
+
+	newnode = (struct node *)malloc (sizeof(struct node));
+	printf("\n Enter Data =>");
+	scanf("%d",&newnode->data);
+
+	newnode->next = head;
+	head = newnode;
+}
+
+void insert_las()
+{
+
+	newnode = (struct node *)malloc (sizeof(struct node));
+	printf("\n Enter Data =>");
+	scanf("%d",&newnode->data);
+
+	temp = head;
+
+	while(temp->next!=0)
+	{
+		temp = temp->next;
+	}
+
+	temp->next = newnode;
+
+}
+
+void insert_pos()
+{
+	int pos,i=1;
+
+	printf("\n\t ENter Postion =>");
+	scanf("%d",&pos);
+
+	newnode = (struct node *)malloc (sizeof(struct node));
+	printf("\n Enter Data =>");
+	scanf("%d",&newnode->data);
+
+	temp = head;
+
+	while(i<pos)
+	{
+		temp = temp->next;
+		i++;
+	}
+
+	newnode->next = temp->next;
+	temp->next = newnode;
+
+}
+
+void del_first()
+{
+	temp = head;
+	head = head->next;
+	free(temp);
+
+}
+
+void del_last()
+{
+	struct node *prevnode;
+
+	temp = head;
+
+	while(temp->next != 0)
+	{
+		prevnode = temp;
+		temp = temp->next;
+	}
+
+	prevnode->next = 0;
+
+	free(temp);
+
+}
+
+void del_pos()
+{
+	struct node *prevnode;
+
+	int pos,i=1;
+
+	printf("Enter Pos =>");
+	scanf("%d",&pos);
+
+	temp = head;
+
+	while(i<pos)
+	{
+		prevnode = temp;
+		temp = temp->next;
+		i++;
+	}
+
+	prevnode->next = temp->next;
+	free(temp);
+
+}
+
+void main()
+{
+	int ch;
+
+	clrscr();
+
+	do
+	{
+	printf("\n 1 Create \n 2 Display \n 3 Insert first \n 4 Insert last \n 5 insert Pos \n 6 Dele _first \n 7 del lst \n 8 del pos \n 9 exit");
+	printf("\n\t Enter Your choice =>");
+	scanf("%d",&ch);
+
+	switch(ch)
+	{
+		case 1: //create
+			insert();
+		break;
+
+		case 2: //disp
+			display();
+		break;
+
+		case 3: // insert first
+			insert_fir();
+		break;
+
+		case 4: // insert last
+			insert_las();
+		break;
+
+		case 5: //insert pos
+			insert_pos();
+		break;
+
+		case 6:
+			del_first();
+		break;
+
+		 case 7 :
+			del_last();
+		 break;
+
+		 case 8:
+			del_pos();
+		 break;
+
+		 case 9:
+			// exit
+			exit(0);
+		break;
+
+	default:
+		printf("!! Wrong choice !! ");
+	}
+
+
+
+	}while(ch>0);
+
+	getch();
+}

@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int a[20],i,j,n,key=0,flag=0;
+	char ch;
+
+	clrscr();
+
+	printf("\n\n\t Enter size of arr =>");
+	scanf("%d",&n);
+
+	for(i=0; i<n; i++)
+	{
+		printf("\n\t Enter number %d =>",i);
+		scanf("%d",&a[i]);
+	}
+	do
+	{
+	for(i=0; i<n; i++)
+	{
+		printf(" %d ",a[i]);
+	}
+
+	printf("\n\n\t Enter key u search =>");
+	scanf("%d",&key);
+
+	for(i=0; i<n; i++)
+	{
+		if(a[i] == key)
+		{
+			flag = 1;
+			printf("\n %d found at position %d ",key,i+1);
+		}
+	}
+
+	if(flag == 0)
+	{
+		printf("\n\n\t Not found ");
+	}
+
+	printf("\n\n\t you still search [Y/N] =>");
+	scanf(" %c",&ch);
+	}while(ch == 'Y' || ch == 'y');
+
+	getch();
+}

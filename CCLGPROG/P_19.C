@@ -1,0 +1,19 @@
+// covert angle in degree to radius  (angle dgree * PI /180)
+#include<stdio.h>
+#include<conio.h>
+#define PI 3.14
+
+void main()
+{
+	float radius,angle_degree;
+
+	clrscr();
+
+	printf("Enter angle of degree =>");
+	scanf("%f",&angle_degree);
+
+	radius = (angle_degree * PI)/180;
+	printf("Radius is => %f",radius);
+
+	getch();
+}

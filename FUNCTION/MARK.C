@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<conio.h>
+
+int precent(int ,int ,int);
+
+void main()
+{
+
+	int sc = 98,mt = 95, ph = 99;
+
+	clrscr();
+
+	printf("\n\n\t Average is %d",precent(sc,mt,ph));
+
+	getch();
+}
+
+int precent(int sc,int mt,int ph)
+{
+	return (sc + mt + ph )/3 ;
+}

@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<conio.h>
+#define N 5
+int queue[N];
+int front = -1;
+int rear = -1;
+
+void main()
+{
+	int n,data;
+
+	clrscr();
+
+	do
+	{
+		printf("\n\1 en \t 2 dq \t dis \t 4 exit");
+		printf("\n\t Enter Choice =>");
+		scanf("%d",&n);
+
+		switch(n)
+		{
+			case 1:
+			break;
+
+			case 2:
+			break;
+
+			case 3:
+			break;
+
+			case 4:
+			break;
+
+		default:
+			printf("!! WRONG CHOUCE !!");
+		}
+
+	getch();
+}

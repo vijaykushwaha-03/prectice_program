@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "FUN_BUBL.C": "cpp",
+        "FACTORAL.C": "cpp",
+        "FUN1.C": "cpp",
+        "FUN_PREC.C": "cpp",
+        "KRISHNAM.C": "cpp",
+        "SUMOFDIG.C": "cpp",
+        "W_A_W_R.C": "cpp",
+        "MARK.C": "cpp"
+    }
+}

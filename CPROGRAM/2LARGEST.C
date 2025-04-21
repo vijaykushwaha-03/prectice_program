@@ -1,0 +1,42 @@
+// check largest number using if else in 3 number
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int x,y,z;
+	clrscr();
+
+	printf(" \n\n\t Enter x value => ");
+	scanf("%d",&x);
+
+	printf(" \n\n\tEnter y value => ");
+	scanf("%d",&y);
+
+	printf(" \n\n\tEnter z value => ");
+	scanf("%d",&z);
+
+	if(x > y)
+	{
+		if(x > z)
+		{
+			printf("\n\n\t %d x is greter",x);
+		}
+		else
+		{
+			printf("\n\n\t %d z is greter",z);
+		}
+	}
+	else if(y > z)
+	{
+		printf("\n\n\t %d y is greter ",y);
+	}
+	else
+	{
+		printf("\n\n\t %d z is greter",z);
+	}
+	getch();
+
+  }
+
